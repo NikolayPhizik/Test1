@@ -1,5 +1,7 @@
 import {Route, Switch} from "react-router-dom";
 import Header from "./Components/Header/Header";
+import Cabinet from "./Components/Cabinet/Cabinet";
+import Login from "./Components/Login/Login";
 
 
 function App() {
@@ -7,7 +9,10 @@ function App() {
     <>
       <Header />
       <Switch>
-        <Route />
+        <Route exact path="/" render={() => <Cabinet />} />
+        <Route path="/cabinet" render={() => <Cabinet />} />
+        <Route path="/login" render={() => <Login />} />
+        <Route path="*" render={() => <div>404 NOT FOUND</div>} />
       </Switch>
     </>
   );

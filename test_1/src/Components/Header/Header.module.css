@@ -1,0 +1,14 @@
+.header_top {
+    background: linear-gradient(#FFF, #e2e2e2);
+    height: 116px;
+    border-bottom: 1px solid #CCC;
+}
+
+.main_wrapper {
+    width: 990px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

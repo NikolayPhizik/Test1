@@ -1,0 +1,35 @@
+.main_menu {
+    display: flex;
+    margin-right: 15px;
+}
+
+.menu_link,
+.menu_link_cab {
+    width: 110px;
+    height: 116px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #303030;
+    border-right: 1px solid #cbcbcb;
+    box-sizing: border-box;
+}
+
+.menu_link_cab {
+    width: 200px;
+}
+
+.menu_link_span {
+    color: #5e5e5e;
+    margin-top: 10px;
+    font-size: 18px;
+    line-height: 23px;
+    text-shadow: 2px 2px 1px rgba(255,255,255,0.6);
+}
+
+.menu_link:hover,
+.menu_link_cab:hover {
+    background: linear-gradient(#FFF, #cac2c2);
+}
