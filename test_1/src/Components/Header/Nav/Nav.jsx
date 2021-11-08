@@ -6,12 +6,12 @@ const Nav = () => {
         <nav className={classes.main_menu}>
             <Link to="/cabinet">
                 <div className={classes.menu_link_cab}>
-                    <span className={classes.menu_link_span}>Личный кабинет</span>
+                    <span className={classes.menu_link_span}>Personal Area</span>
                 </div>
             </Link>
             <Link to="/login">
                 <div className={classes.menu_link}>
-                    <span className={classes.menu_link_span}>Вход</span>
+                    <span className={classes.menu_link_span}>Login</span>
                 </div>
             </Link>
         </nav>
