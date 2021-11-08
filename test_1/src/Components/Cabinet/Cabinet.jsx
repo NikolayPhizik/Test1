@@ -1,10 +1,10 @@
 import classes from "./Cabinet.module.css";
 import User from "./User/User";
 
-const Cabinet = (props) => {
+const Cabinet = ({users}) => {
     return (
         <section className={classes.cabinet}>
-            {props.userDate.map(item => <User key={item.id} name={item.name} imgUrl={item.imgUrl} />)}
+            {users.map(item => <User key={item.id} name={item.name} imgUrl={item.imgUrl} />)}
         </section>
     );
 };
