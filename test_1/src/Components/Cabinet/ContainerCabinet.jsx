@@ -1,5 +1,6 @@
 import Cabinet from "./Cabinet";
 import {connect} from "react-redux";
+import {requestUsers} from "../../Redux/users-reducer";
 
 const ContainerCabinet = ({users}) => {
     return (
@@ -13,4 +14,4 @@ let mapStateToProps = (state) => {
     }
 };
 
-export default connect(mapStateToProps, null)(ContainerCabinet);
+export default connect(mapStateToProps, requestUsers)(ContainerCabinet);

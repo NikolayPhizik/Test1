@@ -6,7 +6,7 @@ const Cabinet = ({users}) => {
     return (
         <section className={classes.cabinet}>
             {users.length === 0 && <Preloader />}
-            {users.map(item => <User key={item.id} name={item.name} imgUrl={item.imgUrl} />)}
+            {users.map(item => <User key={item.id} name={item.name} imgUrl={item.avatar} />)}
         </section>
     );
 };
