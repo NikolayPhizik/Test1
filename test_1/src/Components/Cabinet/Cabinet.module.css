@@ -1,8 +1,8 @@
 .cabinet {
-    width: 850px;
+    width: 650px;
     min-height: 500px;
     margin: 2px auto;
-    padding: 10px 20px;
+    padding: 1px 20px;
     background-image: url("../../assets/img/pattern-light.jpg");
     color: black;
 }
