@@ -2,11 +2,15 @@ import {usersAPI} from "../API/API";
 
 
 const SET_USERS = "SET_USERS";
+const SET_TOTAL_USERS_COUNT = "SET_TOTAL_USERS_COUNT";
 
 
 
 let initialState = {
-    users: []
+    users: [],
+    currentPage: "",
+    pageSize: "",
+    totalUsersCount: ""
 };
 
 export const usersReducer = (state = initialState, action) => {
@@ -16,16 +20,29 @@ export const usersReducer = (state = initialState, action) => {
                ...state,
                users: action.users
             };
+        case SET_TOTAL_USERS_COUNT:
+            return {
+                ...state,
+                totalUsersCount: action.totalUsersCount
+            };
         default:
             return state;
     };
 };
 
 export const setUsers = (users) => ({type: SET_USERS, users});
+export const setTotalUsersCount = (totalUsersCount) => ({type: SET_TOTAL_USERS_COUNT, totalUsersCount});
 
-export const requestUsers = () => {
+export const requestUsers = (currentPage, pageSize) => {
     return async (dispatch) => {
-        let response = await usersAPI.getUsers();
+        let response = await usersAPI.getUsers(currentPage, pageSize);
         dispatch(setUsers(response));
+    }
+}
+
+export const requestTotalUsersCount = () => {
+    return async (dispatch) => {
+        let response = await usersAPI.getTotalUsersCount();
+        dispatch(setTotalUsersCount(response.data.totalUsersCount))
     }
 }

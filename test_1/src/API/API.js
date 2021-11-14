@@ -6,10 +6,16 @@ let instance = axios.create({
 });
 
 export const usersAPI = {
-    getUsers() {
-        return instance.get("people")
+    getUsers(currentPage, pageSize) {
+        return instance.get(`/people?_page=${currentPage}&_limit=${pageSize}`)
             .then(response => {
                 return response.data;
+            });
+    },
+    getTotalUsersCount() {
+        return instance.get("/dataCount")
+            .then(response => {
+                return response;
             });
     }
 };
