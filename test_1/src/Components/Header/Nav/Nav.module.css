@@ -6,7 +6,7 @@
 .menu_link,
 .menu_link_cab {
     width: 110px;
-    height: 116px;
+    height: 70px;
     display: flex;
     flex-direction: column;
     align-items: center;
