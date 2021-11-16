@@ -1,0 +1,10 @@
+.paginator_box {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 140px;
+}
+
+.span {
+    cursor: pointer;
+    color: #676666;
+}

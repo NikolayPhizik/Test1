@@ -3,19 +3,22 @@ import Paginator from "./Paginator";
 import {requestTotalUsersCount, requestUsers} from "../../Redux/users-reducer";
 
 
-const PaginatorContainer = ({currentPage, pageSize, totalUsersCount, requestUsers, requestTotalUsersCount}) => {
+const PaginatorContainer = ({pageSize, totalUsersCount, requestUsers, requestTotalUsersCount}) => {
+
+    const onPageChanged = (currentPage) => {
+        requestUsers(currentPage, pageSize);
+    };
+
     return (
-        <Paginator currentPage={currentPage}
-                   pageSize={pageSize}
+        <Paginator pageSize={pageSize}
                    totalUsersCount={totalUsersCount}
-                   requestUsers={requestUsers}
-                   requestTotalUsersCount={requestTotalUsersCount}/>
+                   requestTotalUsersCount={requestTotalUsersCount}
+                   onPageChanged={onPageChanged}/>
     )
 }
 
 let mapStateToProps = (state) => {
     return {
-        currentPage: state.usersPage.currentPage,
         pageSize: state.usersPage.pageSize,
         totalUsersCount: state.usersPage.totalUsersCount
     }
