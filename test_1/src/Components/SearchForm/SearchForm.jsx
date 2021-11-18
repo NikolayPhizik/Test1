@@ -1,16 +1,15 @@
 import classes from "./SearchForm.module.css";
 
 
-const SearchForm = () => {
+const SearchForm = ({searchUser}) => {
+
     return (
         <section>
             <div className={classes.main_wrapper}>
                 <div className={classes.form_container}>
                     <form className={classes.form}>
                         <input className={classes.input} type="text" name="search" placeholder="Enter a name to search" />
-                            <button className={classes.button}>
-                                <span className={classes.span}>Search</span>
-                            </button>
+                        <span onClick={(e) => {searchUser("RONNIE BALISTRERI")}} className={classes.span}>Search</span>
                     </form>
                 </div>
             </div>

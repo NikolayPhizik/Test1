@@ -17,5 +17,11 @@ export const usersAPI = {
             .then(response => {
                 return response;
             });
+    },
+    searchUser(name) {
+        return instance.get(`/people?q=${name}`)
+            .then(response => {
+                return response.data;
+            });
     }
 };

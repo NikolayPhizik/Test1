@@ -46,3 +46,12 @@ export const requestTotalUsersCount = () => {
         dispatch(setTotalUsersCount(response.data.totalUsersCount))
     }
 }
+
+export const requestSearchUser = (name) => {
+    return async (dispatch) => {
+        let response = await usersAPI.searchUser(name);
+        if (response.length !== 0) {
+            dispatch(setUsers(response));
+        }
+    }
+}
