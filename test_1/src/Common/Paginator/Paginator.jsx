@@ -1,7 +1,8 @@
 import classes from "./Paginator.module.css";
+import classNames from "classnames";
 
 
-const Paginator = ({pageSize, totalUsersCount, requestTotalUsersCount, onPageChanged}) => {
+const Paginator = ({currentPage, pageSize, totalUsersCount, requestTotalUsersCount, onPageChanged}) => {
 
     let pagesCount = Math.ceil(totalUsersCount / pageSize);
     let pages = [];
@@ -13,7 +14,7 @@ const Paginator = ({pageSize, totalUsersCount, requestTotalUsersCount, onPageCha
     return (
         <div className={classes.paginator_box}>
             {pages.map(p => {
-                return <span className={classes.span} key={p} onClick={(e) => {
+                return <span className={classNames({[classes.selectedPage]: currentPage === p} ,classes.span)} key={p} onClick={(e) => {
                     onPageChanged(p);
                 }}>{p}</span>
             })}
