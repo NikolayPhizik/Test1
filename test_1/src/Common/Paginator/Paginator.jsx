@@ -15,14 +15,14 @@ const Paginator = ({pageSize, totalUsersCount, requestTotalUsersCount, onPageCha
 
     requestTotalUsersCount();
     return (
-        <div className={classes.paginator_box}>
+        <span className={classes.paginator_box}>
             {pages.map(p => {
-                return <span className={classNames({[classes.selectedPage]: currentPage === p} ,classes.span)} key={p} onClick={(e) => {
+                return <div className={classNames({[classes.selectedPage]: currentPage === p}, classes.container)} key={p} onClick={(e) => {
                     onPageChanged(p);
                     setCurrentPage(p);
-                }}>{p}</span>
+                }}>{p}</div>
             })}
-        </div>
+        </span>
     );
 };
 
