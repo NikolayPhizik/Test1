@@ -1,4 +1,6 @@
 import classes from "./Paginator.module.css";
+import classNames from "classnames";
+import {useState} from "react";
 
 
 const Paginator = ({pageSize, totalUsersCount, requestTotalUsersCount, onPageChanged}) => {
@@ -9,15 +11,18 @@ const Paginator = ({pageSize, totalUsersCount, requestTotalUsersCount, onPageCha
         pages.push(i);
     }
 
+    const [currentPage, setCurrentPage] = useState(1);
+
     requestTotalUsersCount();
     return (
-        <div className={classes.paginator_box}>
+        <span className={classes.paginator_box}>
             {pages.map(p => {
-                return <span className={classes.span} key={p} onClick={(e) => {
+                return <div className={classNames({[classes.selectedPage]: currentPage === p}, classes.container)} key={p} onClick={(e) => {
                     onPageChanged(p);
-                }}>{p}</span>
+                    setCurrentPage(p);
+                }}>{p}</div>
             })}
-        </div>
+        </span>
     );
 };
 
