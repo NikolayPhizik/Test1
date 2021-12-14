@@ -22,16 +22,22 @@ const Paginator = ({pageSize, totalUsersCount, requestTotalUsersCount, onPageCha
     requestTotalUsersCount();
     return (
         <div className={classes.paginator_box}>
-            {portionNumber > 1 && <button onClick={() => {setpPortionNumber(portionNumber - 1)}}>Back</button>}
-            {pages.filter(p => p >= leftPortionPageNumber && p <= rightPortionPageNumber).map(p => {
-                return <div className={classNames(
-                    {[classes.selectedPage]: currentPage === p}, 
-                    classes.container)} key={p} onClick={(e) => {
-                    onPageChanged(p);
-                    setCurrentPage(p);
-                }}>{p}</div>
-            })}
-            {portionCount > portionNumber && <button onClick={() => {setpPortionNumber(portionNumber + 1)}}>Next</button>}
+            <div className={classes.button_back}>
+                {portionNumber > 1 && <button className={classes.button} onClick={() => {setpPortionNumber(portionNumber - 1)}}>Back</button>}
+            </div>
+            <div className={classes.container}>
+                {pages.filter(p => p >= leftPortionPageNumber && p <= rightPortionPageNumber).map(p => {
+                    return <div className={classNames(
+                        {[classes.selectedPage]: currentPage === p}, 
+                        classes.span)} key={p} onClick={(e) => {
+                        onPageChanged(p);
+                        setCurrentPage(p);
+                    }}>{p}</div>
+                })}
+            </div>
+            <div className={classes.button_next}>
+                {portionCount > portionNumber && <button className={classes.button} onClick={() => {setpPortionNumber(portionNumber + 1)}}>Next</button>}
+            </div>
         </div>
     );
 };

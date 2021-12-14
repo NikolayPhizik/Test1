@@ -1,10 +1,17 @@
 .paginator_box {
     display: flex;
-    justify-content: space-between;
-    margin: 20px 120px;
+    margin-left: 170px;
+    align-items: center;
 }
 
 .container {
+    width: 80px;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0px;
+}
+
+.span {
     cursor: pointer;
     color: #676666;
 }
@@ -15,4 +22,22 @@
     color: black;
     border: 1px solid black;
     border-radius: 100%;
+}
+
+.button {
+    height: 20px;
+    width: 45px;
+    border-radius: 11px;
+    font-size: 10px;
+}
+
+.button_back {
+    width: 60px;
+    margin-bottom: 2px;
+}
+
+.button_next {
+    width: 60px;
+    margin-left: 14px;
+    margin-bottom: 2px;
 }
