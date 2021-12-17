@@ -25,3 +25,12 @@ export const usersAPI = {
             });
     }
 };
+
+export const authAPI = {
+    registerUser(formData) {
+        return instance.post("/register", formData)
+            .then(response => {
+                return response.data;
+            });
+    }
+};

@@ -14,6 +14,11 @@ const Nav = () => {
                     <span className={classes.menu_link_span}>Login</span>
                 </div>
             </Link>
+            <Link to="/register">
+            <div className={classes.menu_link}>
+                <span className={classes.menu_link_span}>Register</span>
+            </div>
+        </Link>
         </nav>
     );
 };
