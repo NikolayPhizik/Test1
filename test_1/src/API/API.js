@@ -7,7 +7,7 @@ let instance = axios.create({
 
 export const usersAPI = {
     getUsers(currentPage, pageSize) {
-        return instance.get(`/people?_page=${currentPage}&_limit=${pageSize}`)
+        return instance.get(`/users?_page=${currentPage}&_limit=${pageSize}`)
             .then(response => {
                 return response.data;
             });
@@ -19,7 +19,7 @@ export const usersAPI = {
             });
     },
     searchUser(name) {
-        return instance.get(`/people?q=${name}`)
+        return instance.get(`/users?q=${name}`)
             .then(response => {
                 return response.data;
             });
@@ -29,6 +29,12 @@ export const usersAPI = {
 export const authAPI = {
     registerUser(formData) {
         return instance.post("/register", formData)
+            .then(response => {
+                return response.data;
+            });
+    },
+    loginUser(formData) {
+        return instance.post("/login", formData)
             .then(response => {
                 return response.data;
             });

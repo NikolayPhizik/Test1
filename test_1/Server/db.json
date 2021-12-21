@@ -1,5 +1,5 @@
 {
-  "people": [
+  "users": [
     {
       "id": 0,
       "name": "Todd Auer",
@@ -499,6 +499,11 @@
       "id": 99,
       "name": "Rosalie Kiehn",
       "avatar": "https://cdn.fakercloud.com/avatars/RussellBishop_128.jpg"
+    },
+    {
+      "email": "nikolay.eremin82@mail.ru",
+      "password": "$2a$10$.zzWwBC3pR/EdPLK0D.urubeB6eHDhjvNz5KFzMDBQFNL4IqoZpPu",
+      "id": 100
     }
   ],
   "dataCount": {

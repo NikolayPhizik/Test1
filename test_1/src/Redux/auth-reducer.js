@@ -26,11 +26,19 @@ export const authReducer = (state = initialState, action) => {
 
 
 export const setRegisterUser = (formData) => ({type: SET_REGISTER_USER, formData});
+//export const setLoginUser = (formData) => ({type: SET_REGISTER_USER, formData});
 
 
 export const requestRegisterUser = (formData) => {
 	return async (dispatch) => {
 		 let response = await authAPI.registerUser(formData);
 		 dispatch(setRegisterUser(response));
+	}
+}
+
+export const requestLoginUser = (formData) => {
+	return async (dispatch) => {
+		 let response = await authAPI.loginUser(formData);
+		 //dispatch(setLoginUser(response));
 	}
 }

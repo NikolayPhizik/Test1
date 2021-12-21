@@ -9,7 +9,7 @@ const RegisterReduxContainer = ({requestRegisterUser}) => {
 
 	const onSubmit = (formData) => {
 		requestRegisterUser(formData);
-  };
+    };
 
     return (
         <Register onSubmit={onSubmit} />
