@@ -36,7 +36,7 @@ export const authAPI = {
     loginUser(formData) {
         return instance.post("/login", formData)
             .then(response => {
-                return response.data;
+                return response;
             });
     }
 };

@@ -8,7 +8,7 @@ const LoginForm = (props) => {
 					<p className={classes.login_form_p}>
 							<Field className={classNames(classes.login_form_input, classes.login_icon_user)}
 										 type="text"
-										 name="login"
+										 name="email"
 										 placeholder="Логин"
 										 component="input" />
 					</p>

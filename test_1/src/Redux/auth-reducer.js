@@ -1,44 +1,43 @@
 import {authAPI} from '../API/API';
 
-const SET_REGISTER_USER = 'SET_REGISTER_USER';
+const SET_LOGIN_USER = 'SET_LOGIN_USER';
 
 
 let initialState = {
-	email: "",
-	password: "",
-	auth: false
+	accessToken: ""
 };
 
 
 
 export const authReducer = (state = initialState, action) => {
 	switch (action.type) {
-		case SET_REGISTER_USER:
-			 return {
-				 ...state,
-				 email: action.formData.email,
-				 password: action.formData.password
-			 };
+		case SET_LOGIN_USER:
+			return {
+				...state,
+				accessToken: action.accessToken
+			};
 		default:
 			 return state;
   };
 };
 
 
-export const setRegisterUser = (formData) => ({type: SET_REGISTER_USER, formData});
-//export const setLoginUser = (formData) => ({type: SET_REGISTER_USER, formData});
+export const setLoginUser = (accessToken) => ({type: SET_LOGIN_USER, accessToken});
 
 
 export const requestRegisterUser = (formData) => {
 	return async (dispatch) => {
 		 let response = await authAPI.registerUser(formData);
-		 dispatch(setRegisterUser(response));
+		 dispatch(setLoginUser(response.data.accessToken));
 	}
 }
 
 export const requestLoginUser = (formData) => {
 	return async (dispatch) => {
 		 let response = await authAPI.loginUser(formData);
-		 //dispatch(setLoginUser(response));
+		 if (response.data.accessToken) {
+			dispatch(setLoginUser(response.data.accessToken));
+		 }
+		 	
 	}
 }

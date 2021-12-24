@@ -1,23 +1,30 @@
 import Login from "./Login";
 import {reduxForm} from "redux-form";
+import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import {requestLoginUser} from './../../Redux/auth-reducer';
 import LoginForm from "./LoginForm/LoginForm";
 
-const LoginReduxContainer = ({requestLoginUser}) => {
+const LoginReduxContainer = ({auth, requestLoginUser}) => {
 
 	const onSubmit = (formData) => {
-		console.log(formData);
+		requestLoginUser(formData);
 	};
 
 	return (
-		<Login onSubmit={onSubmit} />
+		auth !== "" ? <Redirect to='/cabinet' /> : <Login onSubmit={onSubmit} />
 	);
 };
 
 
+let mapStateToProps = (state) => {
+	return {
+		auth: state.isAuth.accessToken
+	}
+};
+
 export const LoginReduxForm = reduxForm({form: 'login'})(LoginForm);
 
-const LoginContainer = connect(null, {requestLoginUser})(LoginReduxContainer);
+const LoginContainer = connect(mapStateToProps, {requestLoginUser})(LoginReduxContainer);
 
 export default LoginContainer;
