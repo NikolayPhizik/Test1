@@ -1,5 +1,5 @@
 {
-"users": [
+  "users": [
     {
       "id": 0,
       "name": "Todd Auer",
@@ -502,7 +502,7 @@
     },
     {
       "email": "nikolay.eremin82@mail.ru",
-      "password": "$2a$10$.zzWwBC3pR/EdPLK0D.urubeB6eHDhjvNz5KFzMDBQFNL4IqoZpPu",
+      "password": "$2a$10$zTnGxWYiERXB/BNdTOLgM.s/4wcnw3aWlYRSed/Xhf9HbhymIFjtS",
       "id": 100
     }
   ],
